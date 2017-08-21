@@ -11,6 +11,16 @@ post '/name' do
 end	
 
 get '/placeorder' do
-	p "#{session[:ordername]} look here"
+	
 	erb :placeorder
+end	
+
+post '/placeorder' do
+	session[:size] = params[:size]
+	session[:crust] = params[:crust]
+	session[:suace] = params[:suace]
+	session[:meats] = params[:meats]
+	session[:veggies] = params[:veggies]
+	session[:cheese] = params[:cheese]
+	
 end	
