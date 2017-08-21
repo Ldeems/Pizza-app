@@ -22,5 +22,9 @@ post '/placeorder' do
 	session[:meats] = params[:meats]
 	session[:veggies] = params[:veggies]
 	session[:cheese] = params[:cheese]
-	
+	redirect '/confirm?'
+end	
+
+get '/confirm' do
+	erb :confirm, locals:{size:session[:size], crust:session[:crust], suace:session[:suace], meats:session[:meats], veggies:session[:veggies], cheese:session[:cheese] }
 end	

@@ -1,0 +1,22 @@
+Please confirm your toppings choices<br><br><br>
+
+<%suace.each do |a|%>
+        <input type = "radio" name = "meats[]" value = "<%=a%>">yes
+        <input type = "radio" name = "meats[]" value = "">no
+        <%=a%><br>
+    <%end%>
+
+<%meats.each do |b|%>
+        <input type = "radio" name = "meats[]" value = "<%=b%>">yes
+        <input type = "radio" name = "meats[]" value = "">no
+        <%=b%><br>
+    <%end%>
+
+<%veggies.each do |c|%>
+        <input type = "radio" name = "meats[]" value = "<%=c%>">yes
+        <input type = "radio" name = "meats[]" value = "">no
+        <%=c%><br>
+    <%end%>
+
+        
+
