@@ -37,5 +37,27 @@ post '/confirm' do
 end	
 
 get '/pick' do
-	erb :pick, locals:{meat:session[:meat], veggie:session[:veggie]}
+	erb :pick
+end
+
+post '/pick' do
+	delivery = params[:delivery]
+	if delivery == "house"
+		redirect '/del?'
+	else
+		redirect '/final?'
+	end		
+end
+
+get '/del' do
+	erb :del
+end
+
+post '/del' do
+	session[:address] = params[:address]
+	redirect '/final?'
+end	
+
+get '/final' do
+erb :final, locals:{address:session[:address], veggie:session[:veggie], meat:session[:meat], cheese:session[:cheese], suace:session[:suace], crust:session[:crust], size:session[:size], ordername:session[:ordername]}
 end	

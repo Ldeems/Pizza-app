@@ -1,0 +1,30 @@
+Here is you order details:
+<br>
+<%=ordername%>
+<br>
+<%=address%>
+<br>
+Pizza details:
+<%=size%>
+<br>
+<%=crust%>
+<br>
+<%=suace%>
+<br>
+<%=cheese%>
+<br>
+<%meat.each do |key,value|%>
+	<%if value == "on"%>
+		<%meat.delete(key)%>
+	<%else%>
+		<%=value%>
+	<%end%>
+<%end%>
+<br>
+<%veggie.each do |key,value|%>
+	<%if value == "on"%>
+		<%veggie.delete(key)%>
+	<%else%>
+		<%=value%>
+	<%end%>
+<%end%>			
