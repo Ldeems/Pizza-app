@@ -1,22 +1,31 @@
 Please confirm your toppings choices<br><br><br>
 
-<%suace.each do |a|%>
-        <input type = "radio" name = "suace[]" value = "<%=a%>">yes
-        <input type = "radio" name = "suace[]" value = "">no
-        <%=a%><br>
-    <%end%>
+ <form method="post" action="confirm">
+ <%if meats == nil%>
 
-<%meats.each do |b|%>
-        <input type = "radio" name = "meats[]" value = "<%=b%>">yes
-        <input type = "radio" name = "meats[]" value = "">no
-        <%=b%><br>
-    <%end%>
+<%else%>
+	<%n = 0%>
+	<%meats.each do |b|%>
+		
+        <input type = "radio" name = "meats[<%=n%>]" value = "<%=b%>">yes
+        <input type = "radio" name = "meats[<%=n%>]"]>no  ----<%=b%>
+        <%n += 1%>
+        <br>
+	<%end%>
+<%end%>
+<br> 
+<%if veggies == nil%>
 
-<%veggies.each do |c|%>
-        <input type = "radio" name = "veggie[]" value = "<%=c%>">yes
-        <input type = "radio" name = "veggies[]" value = "">no
-        <%=c%><br>
-    <%end%>
-
-        
+<%else%>
+	<%veggies.each do |c|%>
+	
+       	<input type = "radio" name = "veggies[<%=n%>]" value = "<%=c%>">yes
+        <input type = "radio" name = "veggies[<%=n%>]">no  ----<%=c%>
+        <%n += 1%>
+        <br>
+	<%end%>
+<%end%>
+ 	
+<input type= "submit" value="confirm">
+</form>      
 
