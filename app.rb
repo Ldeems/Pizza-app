@@ -31,8 +31,10 @@ end
 
 post '/confirm' do
 	
-	session[:meat] = params[:meats]
-	session[:veggie] = params[:veggies]
+	m = params[:meats]
+	v = params[:veggies]
+	session[:meat] = m.values
+	session[:veggie] = v.values
 	redirect '/final'
 end	
 

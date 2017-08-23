@@ -13,18 +13,18 @@ Pizza details:
 <br>
 <%=cheese%>
 <br>
-<%meat.each do |key,value|%>
-	<%if value == "on"%>
-		<%meat.delete(key)%>
+<%meat.each do |m|%>
+	<%if m == "on"%>
+		
 	<%else%>
-	<img src = "/image/<%=value%>.jpg"  width="42" height="42">	<%=value%><br>
+	<img src = "/image/<%=m%>.jpg"  width="42" height="42">	<%=m%><br>
 	<%end%>
 <%end%>
 <br>
-<%veggie.each do |key,value|%>
-	<%if value == "on"%>
-		<%veggie.delete(key)%>
+<%veggie.each do |v|%>
+	<%if v == "on"%>
+
 	<%else%>
-	<img src = "/image/<%=value%>.jpg"  width="42" height="42">	<%=value%><br>
+	<img src = "/image/<%=v%>.jpg"  width="42" height="42">	<%=v%><br>
 	<%end%>
 <%end%>			
