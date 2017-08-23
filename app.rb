@@ -22,7 +22,7 @@ post '/placeorder' do
 	session[:meats] = params[:meats]
 	session[:veggies] = params[:veggies]
 	session[:cheese] = params[:cheese]
-	redirect '/confirm?'
+	redirect '/pick'
 end	
 
 get '/confirm' do
@@ -33,7 +33,7 @@ post '/confirm' do
 	
 	session[:meat] = params[:meats]
 	session[:veggie] = params[:veggies]
-	redirect '/pick?'
+	redirect '/final'
 end	
 
 get '/pick' do
@@ -43,9 +43,9 @@ end
 post '/pick' do
 	delivery = params[:delivery]
 	if delivery == "house"
-		redirect '/del?'
+		redirect '/del'
 	else
-		redirect '/final?'
+		redirect '/confirm'
 	end		
 end
 
@@ -55,7 +55,7 @@ end
 
 post '/del' do
 	session[:address] = params[:address]
-	redirect '/final?'
+	redirect '/confirm'
 end	
 
 get '/final' do
