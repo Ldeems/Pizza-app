@@ -15,8 +15,8 @@ get '/pick' do
 end
 
 post '/pick' do
-	delivery = params[:delivery]
-	if delivery == "house"
+	session[:delivery] = params[:delivery]
+	if session[:delivery] == "house"
 		redirect '/del'
 	else
 		redirect '/placeorder'
@@ -113,5 +113,5 @@ post '/checkout' do
 end
 
 get '/results' do 
-	erb :results, locals:{price:session[:price], ordername:session[:ordername], address:session[:address], pizzas:session[:pizzas], weird:session[:weird]}
+	erb :results, locals:{delivery:session[:delivery], price:session[:price], ordername:session[:ordername], address:session[:address], pizzas:session[:pizzas], weird:session[:weird]}
 end	
