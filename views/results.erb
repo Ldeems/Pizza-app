@@ -1,10 +1,17 @@
+Order is under
 <%=ordername%>
 <br><br>
+<% if address == "on"%>
+Order is being picked up
+<%else%>
+Your order is delivered to<br>
 <%=address%>
+<%end%>
 <br><br>
 tortal price is<br>
 $<%=price.sum%>	
 <br><br>
+Pizza Details:<br>
 <%pizzas.each do |v|%>
 	<%if v == "on"%>
 
