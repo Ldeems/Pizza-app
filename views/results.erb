@@ -1,0 +1,23 @@
+<%=ordername%>
+<br><br>
+<%=address%>
+<br><br>
+tortal price is<br>
+$<%=price.sum%>	
+<br><br>
+<%pizzas.each do |v|%>
+	<%=v%><br>		
+<%end%>
+<br>
+
+<br>
+<% if weird == nil%>
+
+<%else%>
+	<%weird.each do |v|%>
+		<%v.each do |g|%>
+			<%=g%><br>
+		<%end%>
+		<br><br>	
+	<%end%>
+<%end%>

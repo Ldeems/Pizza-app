@@ -1,10 +1,5 @@
-Here is you order details:
+Here is you pizza details:
 <br>
-<%=ordername%>
-<br>
-<%=address%>
-<br>
-Pizza details:
 <%=size%>
 <br>
 <%=crust%>
@@ -13,18 +8,71 @@ Pizza details:
 <br>
 <%=cheese%>
 <br>
-<%meat.each do |m|%>
-	<%if m == "on"%>
+<%if meat == nil%>
+
+<%else%>
+	<%meat.each do |m|%>
+		<%if m == "on"%>
 		
-	<%else%>
-	<img src = "/image/<%=m%>.jpg"  width="42" height="42">	<%=m%><br>
+		<%else%>
+			<img src = "/image/<%=m%>.jpg"  width="42" height="42">	<%=m%><br>
+		<%end%>
 	<%end%>
-<%end%>
+<%end%>	
 <br>
-<%veggie.each do |v|%>
-	<%if v == "on"%>
+<%if veggie == nil%>
+
+<%else%>
+	<%veggie.each do |v|%>
+		<%if v == "on"%>
+
+		<%else%>
+			<img src = "/image/<%=v%>.jpg"  width="42" height="42">	<%=v%><br>
+		<%end%>
+	<%end%>
+<%end%>		
+
+<form method="post" action="makeanother">
+	<input type="hidden" name="size" value="<%=size%>">
+	<input type="hidden" name="crust" value="<%=crust%>">
+	<input type="hidden" name="suace" value="<%=suace%>">
+	<input type="hidden" name="cheese" value="<%=cheese%>">
+	<%if meat == nil%>
 
 	<%else%>
-	<img src = "/image/<%=v%>.jpg"  width="42" height="42">	<%=v%><br>
+		<%meat.each do |m|%>
+		<input type="hidden" name="meat" value="<%=m%>">
+		<%end%>
 	<%end%>
-<%end%>			
+	<%if veggie == nil%>
+
+	<%else%>	
+		<%veggie.each do |v|%>	
+			<input type="hidden" name="veggie" value="<%=v%>">
+		<%end%>
+	<%end%>	
+	<button type="submit"> make another</button>
+</form>	
+
+
+<form method="post" action="checkout">
+	<input type="hidden" name="size" value="<%=size%>">
+	<input type="hidden" name="crust" value="<%=crust%>">
+	<input type="hidden" name="suace" value="<%=suace%>">
+	<input type="hidden" name="cheese" value="<%=cheese%>">
+<%if meat == nil%>
+
+	<%else%>
+		<%meat.each do |m|%>
+		<input type="hidden" name="meat" value="<%=m%>">
+		<%end%>
+	<%end%>
+	<%if veggie == nil%>
+
+	<%else%>	
+		<%veggie.each do |v|%>	
+			<input type="hidden" name="veggie" value="<%=v%>">
+		<%end%>
+	<%end%>	
+	<button type="submit"> checkout</button>
+</form>	

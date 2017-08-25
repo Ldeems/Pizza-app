@@ -8,7 +8,7 @@ Please confirm your toppings choices<br><br><br>
 	<%meats.each do |b|%>
 		
         <input type = "radio" name = "meats[<%=n%>]" value = "<%=b%>" checked>yes
-        <input type = "radio" name = "meats[<%=n%>]"]>no  ----<%=b%>
+        <input type = "radio" name = "meats[<%=n%>]" >no  ----<%=b%>
         <%n += 1%>
         <br>
 	<%end%>
@@ -17,6 +17,7 @@ Please confirm your toppings choices<br><br><br>
 <%if veggies == nil%>
 
 <%else%>
+    <%n = 0%>
 	<%veggies.each do |c|%>
 
        	<input type = "radio" name = "veggies[<%=n%>]" value = "<%=c%>" checked>yes
