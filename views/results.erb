@@ -6,7 +6,11 @@ tortal price is<br>
 $<%=price.sum%>	
 <br><br>
 <%pizzas.each do |v|%>
-	<%=v%><br>		
+	<%if v == "on"%>
+
+	<%else%>
+		<%=v%><br>
+	<%end%>			
 <%end%>
 <br>
 
@@ -16,7 +20,11 @@ $<%=price.sum%>
 <%else%>
 	<%weird.each do |v|%>
 		<%v.each do |g|%>
-			<%=g%><br>
+			<%if g == "on"%>
+
+			<%else%>
+				<%=g%><br>
+			<%end%>	
 		<%end%>
 		<br><br>	
 	<%end%>
