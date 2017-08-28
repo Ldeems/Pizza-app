@@ -3,6 +3,8 @@ enable :sessions
 
 get '/' do
 	erb :welcome
+	session[:veggie] = nil
+	session[:meat] = nil
 end
 
 post '/name' do
@@ -38,6 +40,7 @@ get '/placeorder' do
 end	
 
 post '/placeorder' do
+
 	pric = 0
 	session[:size] = params[:size]
 	if session[:size] == "featherwieght"
