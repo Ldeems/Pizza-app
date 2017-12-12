@@ -38,6 +38,10 @@ get '/placeorder' do
 end	
 
 post '/placeorder' do
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 8d5889570a5b314c6948f6747c2c125ae09d6192
 	pric = 0
 	session[:size] = params[:size]
 	if session[:size] == "featherwieght"
